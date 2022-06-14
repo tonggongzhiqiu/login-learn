@@ -1,4 +1,4 @@
-package com.wufu.login.entity;
+package com.wufu.jwt.entity;
 
 import lombok.Data;
 

@@ -1,6 +1,6 @@
-package com.wufu.login.controller;
+package com.wufu.jwt.controller;
 
-import com.wufu.login.entity.User;
+import com.wufu.jwt.entity.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,6 +1,6 @@
-package com.wufu.login.filter;
+package com.wufu.jwt.filter;
 
-import com.wufu.login.entity.User;
+import com.wufu.jwt.entity.User;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
