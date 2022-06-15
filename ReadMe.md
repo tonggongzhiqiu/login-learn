@@ -7,6 +7,11 @@
 2. version-2
 使用过滤器，通过自定义一个继承 OncePerRequestFilter 的 filter 类，就可以不用在 ApiController 中单独验证。
    
+
+3. version-3  
+使用上下文对象管理登录用户，上下文对象中主要是使用了 RequestContextHolder 对象获取当前 request，然后获取 session 中的 user 对象。
+   
+
 # jwt 实现登录
 jwt的登录流程和 session 基本是相同的，不同之处在于
 1. jwt 将数据加密传输，在服务器解密
