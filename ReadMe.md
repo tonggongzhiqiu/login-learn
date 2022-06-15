@@ -24,3 +24,8 @@ jwt的登录流程和 session 基本是相同的，不同之处在于
 使用过滤器节省代码量，两个步骤：
    1. 自定义过滤器，实现 HandlerInterceptor 并重写 preHandler 方法
    2. 启动类继承 WebMvcConfigurer 并重写 addInterceptors 方法添加拦截器
+   
+3. version-3  
+使用上下文对象管理用户，可以在任何层中直接获取到用户对象。步骤：
+   1. 自定义 UserContext，定义存储、获取方法
+   2. 在 LoginInterceptor 登录成功后进行记录

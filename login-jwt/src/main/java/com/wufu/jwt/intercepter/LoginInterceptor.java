@@ -1,5 +1,6 @@
 package com.wufu.jwt.intercepter;
 
+import com.wufu.jwt.context.UserContext;
 import com.wufu.jwt.util.JwtUtil;
 import io.jsonwebtoken.Claims;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -22,6 +23,8 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         Claims claims = JwtUtil.parse(request.getHeader("Authorization"));
         if (claims != null) {
+            // 存储到 上下文 UserContext 中
+            UserContext.add(claims.getSubject());
             return true;
         }
 
@@ -31,5 +34,10 @@ public class LoginInterceptor implements HandlerInterceptor {
         out.flush();
         out.close();
         return false;
+    }
+
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        UserContext.remove();
     }
 }
